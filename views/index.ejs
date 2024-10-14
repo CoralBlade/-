@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文言文现代汉语对照</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>文言文现代汉语对照</h1>
+    </header>
+    <main>
+        <% texts.forEach((text, index) => { %>
+            <section class="text-pair">
+                <h2>文本 <%= index + 1 %></h2>
+                <% text.wenyanwen.forEach((sentence, i) => { %>
+                    <div class="sentence-pair">
+                        <div class="wenyanwen">
+                            <p class="hoverable"><%= sentence %></p>
+                        </div>
+                        <div class="xiandai">
+                            <p class="hoverable"><%= text.xiandai[i] %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </section>
+        <% }); %>
+    </main>
+    <footer>
+        <p>&copy; 2023 文言文现代汉语对照网站</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
